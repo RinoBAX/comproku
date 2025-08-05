@@ -1,0 +1,81 @@
+import React from 'react';
+
+const portfolioData = [
+  {
+    imageUrl: 'https://placehold.co/600x400/3498db/ffffff?text=Briefing+Pagi',
+    title: 'Briefing Pagi Tim Lapangan',
+    description: 'Memulai hari dengan koordinasi dan semangat untuk mencapai target.',
+    category: 'Koordinasi Tim'
+  },
+  {
+    imageUrl: 'https://placehold.co/600x400/2ecc71/ffffff?text=Akuisisi+Merchant',
+    title: 'Akuisisi Merchant QRIS',
+    description: 'Membantu UMKM lokal untuk go-digital dengan pembayaran QRIS.',
+    category: 'Akuisisi'
+  },
+  {
+    imageUrl: 'https://placehold.co/600x400/e74c3c/ffffff?text=Edukasi+Nasabah',
+    title: 'Edukasi Nasabah Perbankan',
+    description: 'Memberikan penjelasan produk perbankan kepada calon nasabah.',
+    category: 'Edukasi'
+  },
+  {
+    imageUrl: 'https://placehold.co/600x400/9b59b6/ffffff?text=Registrasi+KTA',
+    title: 'Proses Registrasi KTA',
+    description: 'Membantu nasabah dalam proses pengajuan Kredit Tanpa Agunan.',
+    category: 'Registrasi'
+  },
+  {
+    imageUrl: 'https://placehold.co/600x400/f1c40f/000000?text=Roadshow+Event',
+    title: 'Event Roadshow di Mall',
+    description: 'Menjangkau lebih banyak audiens melalui event promosi di pusat keramaian.',
+    category: 'Promosi'
+  },
+  {
+    imageUrl: 'https://placehold.co/600x400/1abc9c/ffffff?text=Team+Solid',
+    title: 'Kekompakan Tim BaxProject',
+    description: 'Merayakan pencapaian target bersama tim yang solid.',
+    category: 'Budaya Kerja'
+  },
+];
+
+const Porto = () => {
+  return (
+    <main>
+      <section className="bg-white py-20 md:py-28">
+        <div className="container mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">Galeri Portfolio Kami</h1>
+          <p className="section-subtitle mt-6 max-w-3xl mx-auto">
+            Dokumentasi keberhasilan dan dedikasi tim BaxProject di lapangan dalam menjalankan berbagai proyek akuisisi dan pemasaran.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portfolioData.map((item, index) => (
+              <div key={index} className="card overflow-hidden group">
+                <div className="relative">
+                  <img 
+                    src={item.imageUrl} 
+                    alt={item.title} 
+                    className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                </div>
+                <div className="p-6">
+                  <span className="text-blue-600 text-sm font-semibold">{item.category}</span>
+                  <h3 className="text-xl font-bold mt-1 mb-2 text-gray-800">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Porto;

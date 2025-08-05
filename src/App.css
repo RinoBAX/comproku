@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer components {
+  .section-title {
+    @apply text-4xl font-extrabold leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gray-600 mt-4 max-w-2xl mx-auto;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg transition-transform duration-300;
+  }
+
+  .card:hover {
+    @apply transform -translate-y-1 shadow-xl;
+  }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(37,99,235,1) 35%, rgba(0,212,255,1) 100%);
+}
