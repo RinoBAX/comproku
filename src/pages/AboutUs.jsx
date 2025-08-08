@@ -1,25 +1,20 @@
 import React from 'react';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const AboutUs = () => {
   const teamMembers = [
-    {
-      name: 'Aderino Arya Nanda',
-      role: 'Chief Executive Officer',
-      imageUrl: 'https://placehold.co/400x400/3498db/ffffff?text=Rino',
-      bio: 'Visioner di balik Bax Digital dengan semangat untuk inovasi dan pemberdayaan digital di Indonesia.',
-    },
-    {
-      name: 'Nama CTO',
-      role: 'Chief Technology Officer',
-      imageUrl: 'https://placehold.co/400x400/2ecc71/ffffff?text=CTO',
-      bio: 'Arsitek teknologi yang memastikan semua produk kami andal, skalabel, dan menggunakan teknologi terdepan.',
-    },
-    {
-      name: 'Nama COO',
-      role: 'Chief Operating Officer',
-      imageUrl: 'https://placehold.co/400x400/e74c3c/ffffff?text=COO',
-      bio: 'Ahli strategi operasional yang menjalankan visi perusahaan menjadi kenyataan sehari-hari.',
-    },
+    // {
+    //   name: 'Aderino Arya Nanda',
+    //   role: 'Chief Executive Officer',
+    //   imageUrl: 'https://baxlancerimagefile.nos.wjv-1.neo.id/uploads/berkas-1754616162096-915845122.jpg',
+    //   bio: 'Visioner di balik Bax Digital dengan semangat untuk inovasi dan pemberdayaan digital di Indonesia.',
+    // },
+    // {
+    //   name: 'Nama COO',
+    //   role: 'Chief Operating Officer',
+    //   imageUrl: 'https://placehold.co/400x400/e74c3c/ffffff?text=COO',
+    //   bio: 'Ahli strategi operasional yang menjalankan visi perusahaan menjadi kenyataan sehari-hari.',
+    // },
   ];
 
   const values = [
@@ -45,7 +40,7 @@ const AboutUs = () => {
     <main>
       <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">Tentang PT. Bax Digital Indonesia</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">PT. Bax Digital Indonesia</h1>
           <p className="section-subtitle mt-6 max-w-3xl mx-auto">
             Misi kami adalah mengakselerasi transformasi digital di Indonesia dengan menyediakan platform, edukasi, dan solusi yang mudah diakses dan berdampak besar.
           </p>
@@ -58,15 +53,19 @@ const AboutUs = () => {
             <div className="order-2 md:order-1">
               <h2 className="section-title text-gray-800 mb-4">Perjalanan Kami</h2>
               <p className="text-gray-600 mb-4">
-                Berawal dari sebuah ide sederhana di tahun 2022, PT. Bax Digital Indonesia lahir dari keinginan untuk menjembatani kesenjangan antara talenta digital dan kebutuhan industri. Kami melihat potensi besar yang belum termanfaatkan dan memutuskan untuk membangun ekosistem yang mendukungnya.
+                Berawal dari sebuah tekad merubah kehidupan pada tahun 2023, <strong>PT. Bax Digital Indonesia</strong> lahir dari keinginan untuk 
+                menciptakan teknologi yang dapat membantu masyarakat menjadi lebih produktif dan berkembang.
+                Kami melihat potensi besar yang belum termanfaatkan dan memutuskan untuk membangun 
+                ekosistem yang mendukungnya.
               </p>
               <p className="text-gray-600">
-                Dari peluncuran aplikasi pertama kami, BaxLancer, hingga pengembangan BaxClass dan kesuksesan BaxProject, setiap langkah kami didasari oleh komitmen untuk menciptakan nilai dan peluang bagi semua orang.
+                Dari peluncuran aplikasi pertama kami, BaxLancer, hingga pengembangan <strong>BaxAcademy</strong> dan kesuksesan <strong>BaxProject</strong>, 
+                setiap langkah kami didasari oleh komitmen untuk menciptakan nilai dan peluang bagi semua orang.
               </p>
             </div>
             <div className="order-1 md:order-2">
                 <img 
-                    src="https://placehold.co/600x400/9b59b6/ffffff?text=Our+Journey" 
+                    src="https://baxlancerimagefile.nos.wjv-1.neo.id/uploads/berkas-1754616564655-517845958.jpg" 
                     alt="Perjalanan Bax Digital Indonesia" 
                     className="rounded-lg shadow-xl w-full"
                 />
@@ -94,7 +93,7 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-20 bg-gray-50">
+      {/* <section id="team" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="section-title text-gray-800">Tim Inti Kami</h2>
@@ -115,7 +114,8 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      <WhatsAppButton />
     </main>
   );
 };

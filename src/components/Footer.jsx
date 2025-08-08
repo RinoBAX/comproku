@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const Footer = () => {
   return (

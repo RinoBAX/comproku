@@ -1,4 +1,5 @@
 import React from 'react';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const servicesData = [
   {
@@ -82,6 +83,7 @@ const Services = () => {
           </div>
         </div>
       </section>
+      <WhatsAppButton />
     </main>
   );
 };

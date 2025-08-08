@@ -1,14 +1,15 @@
 import React from 'react';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const portfolioData = [
   {
-    imageUrl: 'https://placehold.co/600x400/3498db/ffffff?text=Briefing+Pagi',
+    imageUrl: 'https://baxlancerimagefile.nos.wjv-1.neo.id/uploads/berkas-1754545973731-168684090.jpg',
     title: 'Briefing Pagi Tim Lapangan',
     description: 'Memulai hari dengan koordinasi dan semangat untuk mencapai target.',
     category: 'Koordinasi Tim'
   },
   {
-    imageUrl: 'https://placehold.co/600x400/2ecc71/ffffff?text=Akuisisi+Merchant',
+    imageUrl: 'https://baxlancerimagefile.nos.wjv-1.neo.id/uploads/berkas-1754546575576-739107613.jpg',
     title: 'Akuisisi Merchant QRIS',
     description: 'Membantu UMKM lokal untuk go-digital dengan pembayaran QRIS.',
     category: 'Akuisisi'
@@ -39,30 +40,31 @@ const portfolioData = [
   },
 ];
 
+
 const Porto = () => {
   return (
     <main>
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">Galeri Portfolio Kami</h1>
-          <p className="section-subtitle mt-6 max-w-3xl mx-auto">
+          <p className="text-gray-600 mt-6 max-w-3xl mx-auto">
             Dokumentasi keberhasilan dan dedikasi tim BaxProject di lapangan dalam menjalankan berbagai proyek akuisisi dan pemasaran.
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="pt-12 pb-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioData.map((item, index) => (
-              <div key={index} className="card overflow-hidden group">
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                 <div className="relative">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title} 
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
                     className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/cccccc/ffffff?text=Image+Error'; }}
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 </div>
                 <div className="p-6">
                   <span className="text-blue-600 text-sm font-semibold">{item.category}</span>
@@ -74,6 +76,7 @@ const Porto = () => {
           </div>
         </div>
       </section>
+      <WhatsAppButton />
     </main>
   );
 };
