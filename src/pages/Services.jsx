@@ -43,8 +43,8 @@ const servicesData = [
 const Services = () => {
   return (
     <main>
-      <section className="bg-white pt-20 md:pt-28 pb-12">
-        <div className="container mx-auto px-6 text-center">
+      <section className="bg-white pt-20 md:pt-15 pb-12">
+        <div className="container mx-auto px-1 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">Layanan Kami</h1>
           <p className="section-subtitle mt-6 max-w-3xl mx-auto">
             Solusi digital lengkap untuk mendukung pertumbuhan individu dan bisnis, dari pengembangan produk, pemasaran, edukasi, hingga eksekusi lapangan.

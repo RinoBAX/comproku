@@ -38,20 +38,21 @@ const AboutUs = () => {
 
   return (
     <main>
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-white py-10 md:py-15">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">PT. Bax Digital Indonesia</h1>
-          <p className="section-subtitle mt-6 max-w-3xl mx-auto">
-            Misi kami adalah mengakselerasi transformasi digital di Indonesia dengan menyediakan platform, edukasi, dan solusi yang mudah diakses dan berdampak besar.
+          <p className="section-subtitle mt-5 max-w-4xl mx-auto">
+            Misi kami adalah mengakselerasi transformasi digital di Indonesia dengan menyediakan<br/> 
+            platform, edukasi, dan solusi yang mudah diakses dan berdampak besar.
           </p>
         </div>
       </section>
 
-      <section id="story" className="py-20 bg-gray-50">
+      <section id="story" className="py-10 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <h2 className="section-title text-gray-800 mb-4">Perjalanan Kami</h2>
+              <h2 className="section-title text-gray-800 mb-2">Perjalanan Kami</h2>
               <p className="text-gray-600 mb-4">
                 Berawal dari sebuah tekad merubah kehidupan pada tahun 2023, <strong>PT. Bax Digital Indonesia</strong> lahir dari keinginan untuk 
                 menciptakan teknologi yang dapat membantu masyarakat menjadi lebih produktif dan berkembang.
@@ -74,13 +75,13 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section id="values" className="py-20 bg-white">
+      <section id="values" className="py-10 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="section-title text-gray-800">Nilai-Nilai Kami</h2>
             <p className="section-subtitle">Prinsip yang menjadi pemandu setiap langkah kami.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {values.map((value) => (
               <div key={value.title} className="card p-8 text-center">
                 <div className="text-5xl mb-4">{value.icon}</div>

@@ -27,15 +27,15 @@ const portfolioData = [
     category: 'Registrasi'
   },
   {
-    imageUrl: 'https://placehold.co/600x400/f1c40f/000000?text=Roadshow+Event',
-    title: 'Event Roadshow di Mall',
-    description: 'Menjangkau lebih banyak audiens melalui event promosi di pusat keramaian.',
+    imageUrl: 'https://baxlancerimagefile.nos.wjv-1.neo.id/uploads/berkas-1754719715139-436917888.jpg',
+    title: 'Event Roadshow Pembukaan Rekening terhadap Masyarakat',
+    description: 'Menjangkau lebih banyak audiens melalui event promosi di masyarakat melalui program program BAX yang membantu kehidupan masyarakat dan membuka peluang untuk sesi Sharing dan potensi penghasilan bersama.',
     category: 'Promosi'
   },
   {
-    imageUrl: 'https://placehold.co/600x400/1abc9c/ffffff?text=Team+Solid',
+    imageUrl: 'https://baxlancerimagefile.nos.wjv-1.neo.id/uploads/berkas-1754719822340-471513782.jpg',
     title: 'Kekompakan Tim BaxProject',
-    description: 'Merayakan pencapaian target bersama tim yang solid.',
+    description: 'Merayakan pencapaian target bersama, tim yang solid dalam membantu satu sama lain untuk memecahkan masalah dan mendapatkan hasil terbaik dilapangan baik secara individu maupun secara team.',
     category: 'Budaya Kerja'
   },
 ];
