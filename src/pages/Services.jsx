@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+//update
 const servicesData = [
   {
     slug: 'kelas-digital-marketing',

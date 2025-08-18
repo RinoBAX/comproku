@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-
+//update
 const servicesData = [
     {
         slug: 'jasa-pembuatan-web-app',

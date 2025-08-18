@@ -1,7 +1,7 @@
 import React from 'react';
+//update
 
 const WhatsAppButton = () => {
-  // Ganti dengan nomor WhatsApp admin Anda (format internasional tanpa + atau 00)
   const phoneNumber = "6285719409984"; 
   const message = "Halo, saya tertarik dengan layanan dari Bax Digital Indonesia. Bisakah saya mendapatkan informasi lebih lanjut?";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

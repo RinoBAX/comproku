@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Anda bisa menghapus import WhatsAppButton dari sini jika tidak digunakan di dalam footer
 // import WhatsAppButton from '../components/WhatsAppButton';
+//update
 
 const Footer = () => {
   const socialLinks = [
