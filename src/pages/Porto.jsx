@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import WhatsAppButton from '../components/WhatsAppButton';
 
+//update
 
 const portfolioData = [
   {
@@ -60,18 +61,6 @@ const Porto = () => {
         </div>
       </section>
 
-      {!isGalleryVisible && (
-        <section className="text-center pb-24">
-          <button
-            onClick={handleShowGallery}
-            className="inline-block bg-gradient-to-r from-blue-600 to-purple-500 text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300"
-          >
-            Show BAX
-          </button>
-        </section>
-      )}
-
-      {isGalleryVisible && (
         <section className="pb-24 pt-8 animate-fadeIn">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -95,7 +84,6 @@ const Porto = () => {
             </div>
           </div>
         </section>
-      )}
       
       <WhatsAppButton />
     </main>
