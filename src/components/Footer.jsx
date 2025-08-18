@@ -39,7 +39,7 @@ const Footer = () => {
               <li><Link to="/layanan/jasa-pembuatan-web-app" className="text-slate-400 hover:text-white">Web & Aplikasi</Link></li>
               <li><Link to="/layanan/jasa-periklanan-digital" className="text-slate-400 hover:text-white">Periklanan Digital</Link></li>
               <li><Link to="/layanan/kelas-digital-marketing" className="text-slate-400 hover:text-white">Kelas Digital</Link></li>
-              <li><Link to="/layanan/pemasaran-akuisisi-proyek" className="text-slate-400 hover:text-white">Akuisisi Project</Link></li>
+              <li><Link to="/layanan/pemasaran-akuisisi-project" className="text-slate-400 hover:text-white">Akuisisi Project</Link></li>
             </ul>
           </div>
 {/* Update */}

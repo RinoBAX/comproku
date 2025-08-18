@@ -42,10 +42,10 @@ const servicesData = [
     description: 'Menjadi seorang pengembang web handal dengan menguasai teknologi front-end dan back-end untuk membangun aplikasi modern.',
   },
   {
-    slug: 'pemasaran-akuisisi-proyek',
+    slug: 'Pemasaran-Akuisisi-Project',
     icon: '📈',
     title: 'Pemasaran & Akuisisi Spesialis',
-    description: 'Divisi spesialis kami untuk eksekusi proyek lapangan berskala besar, membantu klien mencapai target akuisisi dengan tim terlatih.',
+    description: 'Divisi spesialis kami untuk eksekusi Project lapangan berskala besar, membantu klien mencapai target akuisisi dengan tim terlatih.',
   },
   {
     slug: 'ui-ux-design-service',

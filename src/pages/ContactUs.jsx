@@ -29,7 +29,7 @@ const ContactUs = () => {
                     Hubungi Kami
                 </h1>
                 <p className="mt-6 text-lg md:text-xl leading-8 text-gray-600">
-                    Punya ide brilian atau pertanyaan tentang proyek? Tim kami siap berdiskusi dan membantu Anda mewujudkan visi digital Anda.
+                    Punya ide brilian atau pertanyaan tentang project? Tim kami siap berdiskusi dan membantu Anda mewujudkan visi digital Anda.
                 </p>
             </div>
         </div>
@@ -123,5 +123,6 @@ const ContactUs = () => {
     </main>
   );
 };
+//update
 
 export default ContactUs;

@@ -24,7 +24,7 @@ const servicesData = [
         title: 'Kelas Digital Marketing',
         description: 'Program pelatihan intensif untuk Anda yang ingin menguasai dunia pemasaran digital, dari dasar hingga strategi tingkat lanjut yang diajar oleh praktisi ahli.',
         tags: ['Kurikulum Industri', 'Studi Kasus', 'Portfolio Project', 'Sertifikasi'],
-        details: 'Kurikulum kami dirancang berdasarkan kebutuhan industri terkini. Anda akan belajar langsung dari para ahli melalui studi kasus nyata dan proyek portofolio. Di akhir program, Anda akan mendapatkan sertifikasi resmi dari BAX DIGITAL sebagai bukti kompetensi Anda di bidang pemasaran digital.'
+        details: 'Kurikulum kami dirancang berdasarkan kebutuhan industri terkini. Anda akan belajar langsung dari para ahli melalui studi kasus nyata dan project portofolio. Di akhir program, Anda akan mendapatkan sertifikasi resmi dari BAX DIGITAL sebagai bukti kompetensi Anda di bidang pemasaran digital.'
     },
     {
         slug: 'kelas-fullstack-developer',
@@ -32,20 +32,20 @@ const servicesData = [
         title: 'Kelas Fullstack Developer',
         description: 'Menjadi seorang pengembang web handal dengan menguasai teknologi front-end dan back-end. Siap membangun aplikasi modern dari nol sampai tuntas.',
         tags: ['React', 'Node.js', 'Database', 'API', 'Portfolio Project'],
-        details: 'Program ini akan membekali Anda dengan keterampilan teknis yang paling dicari di industri. Anda akan belajar membangun aplikasi web yang responsif dan scalable menggunakan teknologi seperti React untuk front-end dan Node.js untuk back-end. Proyek akhir akan menjadi portofolio berharga untuk karir Anda.'
+        details: 'Program ini akan membekali Anda dengan keterampilan teknis yang paling dicari di industri. Anda akan belajar membangun aplikasi web yang responsif dan scalable menggunakan teknologi seperti React untuk front-end dan Node.js untuk back-end. project akhir akan menjadi portofolio berharga untuk karir Anda.'
     },
     {
-        slug: 'pemasaran-akuisisi-proyek',
+        slug: 'pemasaran-akuisisi-project',
         icon: '📈',
-        title: 'Pemasaran & Akuisisi Proyek',
-        description: 'Divisi spesialis kami untuk eksekusi proyek lapangan berskala besar. Kami membantu klien mencapai target akuisisi dengan tim yang terlatih dan strategi terukur.',
+        title: 'Pemasaran & Akuisisi project',
+        description: 'Divisi spesialis kami untuk eksekusi project lapangan berskala besar. Kami membantu klien mencapai target akuisisi dengan tim yang terlatih dan strategi terukur.',
         subItems: [
           'Registrasi Nasabah Perbankan',
           'Pendaftaran Merchant QRIS',
           'Pengajuan Kartu Kredit & KTA',
           'Registrasi Nasabah Saham/Trading',
         ],
-        details: 'Tim lapangan kami yang berpengalaman siap membantu bisnis Anda mencapai target akuisisi secara efisien. Dengan metodologi yang teruji dan pemahaman mendalam tentang pasar lokal, kami memastikan setiap proyek dijalankan dengan standar profesionalisme tertinggi untuk hasil yang optimal.'
+        details: 'Tim lapangan kami yang berpengalaman siap membantu bisnis Anda mencapai target akuisisi secara efisien. Dengan metodologi yang teruji dan pemahaman mendalam tentang pasar lokal, kami memastikan setiap project dijalankan dengan standar profesionalisme tertinggi untuk hasil yang optimal.'
     },
 ];
 
@@ -107,7 +107,7 @@ const ServiceDetail = () => {
 
               {service.subItems && (
                 <div className="mt-6">
-                  <h4 className="text-sm font-medium text-gray-600 mb-2">Cakupan Proyek:</h4>
+                  <h4 className="text-sm font-medium text-gray-600 mb-2">Cakupan project:</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-800">
                     {service.subItems.map(item => (
                       <li key={item}>{item}</li>

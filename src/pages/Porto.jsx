@@ -59,7 +59,7 @@ const Porto = () => {
       <section className="pb-24">
         <div className="container mx-auto px-6">
           {/* Judul kecil untuk transisi yang lebih baik */}
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-12">Galeri Proyek Kami</h2>
+          <h2 className="text-2xl font-bold text-center text-gray-800 mb-12">Galeri Project Kami</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {portfolioData.map((item, index) => (
               <div key={index} className={`group relative rounded-2xl overflow-hidden shadow-lg ${item.span}`}>

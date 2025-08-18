@@ -43,7 +43,7 @@ const AboutUs = () => {
     {
       year: '2023',
       title: 'Peluncuran BaxLancer',
-      description: 'Aplikasi pertama kami diluncurkan, menghubungkan talenta digital dengan peluang proyek di seluruh Indonesia.'
+      description: 'Aplikasi pertama kami diluncurkan, menghubungkan talenta digital dengan peluang project di seluruh Indonesia.'
     },
     {
       year: '2024',
