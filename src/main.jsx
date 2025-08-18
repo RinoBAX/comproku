@@ -11,6 +11,7 @@ import AboutUs from './pages/AboutUs.jsx';
 import Services from './pages/Services.jsx';
 import Porto from './pages/Porto.jsx';
 import ContactUs from './pages/ContactUs.jsx';
+import ServiceDetail from './pages/ServiceDetail.jsx'; 
 import './index.css';
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "layanan",
         element: <Services />,
+      },
+      {
+        path: "layanan/:slug",
+        element: <ServiceDetail />,
       },
       {
         path: "portfolio",
