@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+//update
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,9 +44,9 @@ const Header = () => {
           <div className="md:hidden mt-4">
             <Link to="/" onClick={handleLinkClick} className="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded">Home</Link>
             <Link to="/layanan" onClick={handleLinkClick} className="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded">Layanan</Link>
-            <Link to="/tentang-kami" onClick={handleLinkClick} className="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded">Tentang Kami</Link>
-            <a href="/#portfolio" onClick={handleLinkClick} className="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded">Portfolio</a>
-            <a href="/#kontak" onClick={handleLinkClick} className="block mt-2 w-full bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition-colors">Hubungi Kami</a>
+            <Link to="/AboutUs" onClick={handleLinkClick} className="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded">Tentang Kami</Link>
+            <a href="/portfolio" onClick={handleLinkClick} className="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded">Portfolio</a>
+            <a href="/ContactUs" onClick={handleLinkClick} className="block mt-2 w-full bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition-colors">Hubungi Kami</a>
           </div>
         )}
       </nav>
