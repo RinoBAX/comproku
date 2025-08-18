@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import WhatsAppButton from '../components/WhatsAppButton';
-
-//update
 
 const portfolioData = [
   {
@@ -35,20 +33,16 @@ const portfolioData = [
 ];
 
 const Porto = () => {
-  const [isGalleryVisible, setIsGalleryVisible] = useState(false);
-
-  const handleShowGallery = () => {
-    setIsGalleryVisible(true);
-  };
-
   return (
     <main className="bg-white">
-      <section className="relative pt-16 pb-16 overflow-hidden">
+      {/* --- HERO SECTION --- */}
+      <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
         <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
         <div className="container mx-auto px-6 relative">
             <div className="max-w-4xl text-center mx-auto">
-                <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+                {/* Ukuran font disesuaikan untuk mobile */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
                     Jejak Digital,<br/>
                     <span className="block mt-2 md:mt-0 md:inline bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500">
                         Dampak Nyata.
@@ -61,42 +55,32 @@ const Porto = () => {
         </div>
       </section>
 
-      {!isGalleryVisible && (
-        <section className="text-center pb-24">
-          <button
-            onClick={handleShowGallery}
-            className="inline-block bg-gradient-to-r from-blue-600 to-purple-500 text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300"
-          >
-            Show BAX
-          </button>
-        </section>
-      )}
-
-      {isGalleryVisible && (
-        <section className="pb-24 pt-8 animate-fadeIn">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {portfolioData.map((item, index) => (
-                <div key={index} className={`group relative rounded-2xl overflow-hidden shadow-lg ${item.span}`}>
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
-                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/cccccc/ffffff?text=Image+Error'; }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-                      <span className="text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">{item.category}</span>
-                      <h3 className="text-2xl font-bold mt-2">{item.title}</h3>
-                      <p className="mt-1 text-sm text-gray-200">{item.description}</p>
-                    </div>
+      {/* --- MASONRY GALLERY --- */}
+      <section className="pb-24">
+        <div className="container mx-auto px-6">
+          {/* Judul kecil untuk transisi yang lebih baik */}
+          <h2 className="text-2xl font-bold text-center text-gray-800 mb-12">Galeri Proyek Kami</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {portfolioData.map((item, index) => (
+              <div key={index} className={`group relative rounded-2xl overflow-hidden shadow-lg ${item.span}`}>
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/cccccc/ffffff?text=Image+Error'; }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                    <span className="text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">{item.category}</span>
+                    <h3 className="text-2xl font-bold mt-2">{item.title}</h3>
+                    <p className="mt-1 text-sm text-gray-200">{item.description}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
       
       <WhatsAppButton />
     </main>

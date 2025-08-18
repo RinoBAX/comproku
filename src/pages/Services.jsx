@@ -1,6 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//update
+
+// Komponen WhatsAppButton bisa di-import atau didefinisikan di sini
+const WhatsAppButton = () => {
+    return (
+        <a href="https://wa.me/6285719409984"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="Hubungi kami via WhatsApp"
+           className="fixed bottom-5 right-5 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-xl z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-8 h-8" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.2-27.2l-6.9-4.1-72.3 19 19.3-70.4-4.5-7.2c-19.3-30.7-29.8-66.3-29.8-103.3 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+            </svg>
+        </a>
+    );
+};
+
 const servicesData = [
   {
     slug: 'kelas-digital-marketing',
@@ -40,25 +55,10 @@ const servicesData = [
   }
 ];
 
-const WhatsAppButton = () => {
-    return (
-        <a href="https://wa.me/6285719409984"
-           target="_blank"
-           rel="noopener noreferrer"
-           title="Hubungi kami via WhatsApp"
-           className="fixed bottom-5 right-5 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-xl z-50">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-8 h-8" fill="currentColor">
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.2-27.2l-6.9-4.1-72.3 19 19.3-70.4-4.5-7.2c-19.3-30.7-29.8-66.3-29.8-103.3 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-            </svg>
-        </a>
-    );
-};
-
-
 const Services = () => {
   return (
     <main className="bg-gray-50 font-sans">
-      <section className="relative pt-20 pb-16 text-center">
+      <section className="relative pt-24 pb-16 text-center">
         <div className="container mx-auto px-6 relative">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">
             Ekosistem Solusi Digital Anda
@@ -71,20 +71,27 @@ const Services = () => {
 
       <section className="py-16">
         <div className="container mx-auto px-6">
+          {/* Grid diubah untuk mobile-first, layout asimetris hanya aktif di desktop (lg) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {servicesData.map((service, index) => (
-              <Link to={`/layanan/${service.slug}`} key={service.title} 
-                    className="group relative block p-1 rounded-2xl bg-gradient-to-br from-blue-200 via-gray-200 to-blue-200 transition-all duration-300 transform hover:scale-[1.03] hover:!bg-gradient-to-br hover:from-blue-400 hover:to-purple-400"
-                    style={{ gridRow: index === 0 ? 'span 2' : 'auto', gridColumn: index === 0 ? 'span 2' : 'auto' }}
+              <Link 
+                to={`/layanan/${service.slug}`} 
+                key={service.title} 
+                // Kelas responsif untuk layout asimetris di layar besar
+                className={`group relative block p-1 rounded-2xl bg-gradient-to-br from-blue-200 via-gray-200 to-blue-200 transition-all duration-300 transform hover:scale-[1.03] hover:!bg-gradient-to-br hover:from-blue-400 hover:to-purple-400 
+                           ${index === 0 ? 'lg:col-span-2 lg:row-span-2' : ''}`}
               >
-                <div className="relative w-full h-full p-8 rounded-[14px] bg-white/80 backdrop-blur-xl shadow-lg transition-all duration-300">
-                  <div className={`flex flex-col h-full ${index === 0 ? 'md:flex-row md:items-center md:gap-8' : ''}`}>
-                    <div className={`text-5xl mb-4 md:mb-0 transition-transform duration-500 group-hover:scale-110 ${index === 0 ? 'md:text-7xl' : ''}`}>
+                <div className="relative w-full h-full p-8 rounded-[14px] bg-white/80 backdrop-blur-xl shadow-lg">
+                  {/* Kontainer flexbox diatur agar tingginya menyesuaikan konten */}
+                  <div className={`flex flex-col h-full ${index === 0 ? 'lg:flex-row lg:items-center lg:gap-8' : ''}`}>
+                    <div className={`text-5xl mb-4 shrink-0 transition-transform duration-500 group-hover:scale-110 ${index === 0 ? 'lg:text-7xl' : ''}`}>
                       {service.icon}
                     </div>
-                    <div className="flex-1">
-                      <h3 className={`font-bold text-gray-900 ${index === 0 ? 'text-3xl' : 'text-xl'}`}>{service.title}</h3>
-                      <p className={`mt-2 text-gray-600 ${index === 0 ? 'text-lg' : 'text-base'}`}>{service.description}</p>
+                    {/* flex-1 dan flex-col untuk memastikan deskripsi bisa 'grow' */}
+                    <div className="flex-1 flex flex-col">
+                      <h3 className={`font-bold text-gray-900 ${index === 0 ? 'text-2xl lg:text-3xl' : 'text-xl'}`}>{service.title}</h3>
+                      {/* flex-grow ditambahkan di sini untuk mengatasi overflow */}
+                      <p className={`mt-2 text-gray-600 flex-grow ${index === 0 ? 'text-base lg:text-lg' : 'text-base'}`}>{service.description}</p>
                       
                       <div className="mt-6 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
                           <span className="font-semibold text-blue-600 flex items-center gap-2">
