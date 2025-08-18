@@ -42,8 +42,7 @@ const Footer = () => {
               <li><Link to="/layanan/pemasaran-akuisisi-proyek" className="text-slate-400 hover:text-white">Akuisisi Project</Link></li>
             </ul>
           </div>
-
-          {/* Kolom Tautan Perusahaan */}
+{/* Update */}
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold text-white">Perusahaan</h3>
             <ul className="mt-4 space-y-2 text-sm">
