@@ -1,22 +1,25 @@
+// File: src/api/kirim-ke-slack.js
 
 export default async function handler(request, response) {
-  // Pastikan hanya metode POST yang diterima
+  // 1. Pastikan hanya metode POST yang diterima
   if (request.method !== 'POST') {
     return response.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { nama, email, pesan } = request.body;
+  // 2. Ambil SEMUA data dari body request
+  const { nama, email, telepon, subjek, pesan } = request.body;
 
-  // Ambil URL Webhook dari Environment Variable (lebih aman)
-  const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+  // 3. Ambil URL Webhook dari Environment Variable (INI CARA YANG AMAN)
+  const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
 
   if (!SLACK_WEBHOOK_URL) {
-    return response.status(500).json({ message: 'Webhook URL tidak dikonfigurasi' });
+    console.error('SLACK_WEBHOOK_URL tidak ditemukan di environment variables');
+    return response.status(500).json({ message: 'Webhook URL tidak dikonfigurasi di server.' });
   }
 
-  // Format pesan yang akan dikirim ke Slack
+  // 4. Format pesan Slack untuk menyertakan semua data
   const slackMessage = {
-    text: `🔔 Pesan Baru dari Website PT. Bax Digital Indonesia!`,
+    text: `🔔 Pesan Baru dari Website: ${subjek}`, // Fallback text untuk notifikasi
     blocks: [
       {
         type: 'header',
@@ -30,14 +33,21 @@ export default async function handler(request, response) {
         type: 'section',
         fields: [
           { type: 'mrkdwn', text: `*Nama:*\n${nama}` },
-          { type: 'mrkdwn', text: `*Email:*\n${email}` },
+          { type: 'mrkdwn', text: `*Email:*\n<mailto:${email}|${email}>` }, // Membuat email bisa diklik
         ],
+      },
+      {
+        type: 'section',
+        fields: [
+            { type: 'mrkdwn', text: `*Telepon (WA):*\n${telepon}` },
+            { type: 'mrkdwn', text: `*Subjek:*\n${subjek}` },
+        ]
       },
       {
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `*Pesan:*\n${pesan}`,
+          text: `*Pesan:*\n\`\`\`${pesan}\`\`\``, // Menggunakan block code untuk pesan yang lebih panjang
         },
       },
       { type: 'divider' },
@@ -54,12 +64,13 @@ export default async function handler(request, response) {
     });
 
     if (!slackResponse.ok) {
-      throw new Error(`Error dari Slack: ${slackResponse.statusText}`);
+      const errorBody = await slackResponse.text();
+      throw new Error(`Error dari Slack: ${slackResponse.status} ${errorBody}`);
     }
 
     return response.status(200).json({ message: 'Pesan berhasil dikirim!' });
   } catch (error) {
     console.error('Error saat mengirim ke Slack:', error);
-    return response.status(500).json({ message: 'Gagal mengirim pesan.' });
+    return response.status(500).json({ message: 'Gagal mengirim pesan ke Slack.' });
   }
 }

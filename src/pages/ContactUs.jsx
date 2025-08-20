@@ -77,21 +77,60 @@ const ContactUs = () => {
     validateField(name, value);
   };
 
-  const handleSubmit = async (e) => {
+  // Versi LENGKAP dengan logika fetch
+const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Periksa apakah masih ada error sebelum submit
-    const hasErrors = Object.values(errors).some(error => error !== '');
-    if (hasErrors) {
-      setMessage('Harap perbaiki semua error pada form sebelum mengirim.');
-      setStatus('error');
-      return;
+
+    // Validasi akhir untuk memastikan tidak ada field yang kosong
+    let formIsValid = true;
+    const newErrors = {};
+    Object.keys(formData).forEach(key => {
+        if (!formData[key]) {
+            formIsValid = false;
+            newErrors[key] = 'Field ini tidak boleh kosong.';
+        }
+    });
+
+    // Periksa juga error dari validasi real-time
+    const hasExistingErrors = Object.values(errors).some(error => error !== '');
+    if (hasExistingErrors || !formIsValid) {
+        setErrors(prev => ({ ...prev, ...newErrors }));
+        setMessage('Harap perbaiki semua error pada form sebelum mengirim.');
+        setStatus('error');
+        return;
     }
-    
+
     setStatus('loading');
     setMessage('Mengirim pesan...');
-    // ... sisa logika fetch ...
-  };
+
+    try {
+        // INI BAGIAN PENTING: Mengirim data ke serverless function Anda
+        const response = await fetch('/api/kirim-ke-slack', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.message || 'Terjadi kesalahan saat mengirim.');
+        }
+
+        // Jika berhasil:
+        setStatus('success');
+        setMessage('Terima kasih! Pesan Anda telah terkirim.');
+        setFormData({ email: '', nama: '', telepon: '', subjek: '', pesan: '' }); // Reset form
+        setErrors({}); // Bersihkan error
+
+    } catch (error) {
+        // Jika gagal:
+        setStatus('error');
+        setMessage(error.message || 'Gagal mengirim pesan. Silakan coba lagi.');
+    }
+};
 
   return (
     <main className="bg-white font-sans">
