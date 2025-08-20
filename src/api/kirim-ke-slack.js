@@ -1,25 +1,19 @@
-// File: src/api/kirim-ke-slack.js
-
 export default async function handler(request, response) {
-  // 1. Pastikan hanya metode POST yang diterima
   if (request.method !== 'POST') {
     return response.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  // 2. Ambil SEMUA data dari body request
   const { nama, email, telepon, subjek, pesan } = request.body;
 
-  // 3. Ambil URL Webhook dari Environment Variable (INI CARA YANG AMAN)
-  const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
+  const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
   if (!SLACK_WEBHOOK_URL) {
     console.error('SLACK_WEBHOOK_URL tidak ditemukan di environment variables');
     return response.status(500).json({ message: 'Webhook URL tidak dikonfigurasi di server.' });
   }
 
-  // 4. Format pesan Slack untuk menyertakan semua data
   const slackMessage = {
-    text: `🔔 Pesan Baru dari Website: ${subjek}`, // Fallback text untuk notifikasi
+    text: `🔔 Pesan Baru dari Website: ${subjek}`,
     blocks: [
       {
         type: 'header',
@@ -33,7 +27,7 @@ export default async function handler(request, response) {
         type: 'section',
         fields: [
           { type: 'mrkdwn', text: `*Nama:*\n${nama}` },
-          { type: 'mrkdwn', text: `*Email:*\n<mailto:${email}|${email}>` }, // Membuat email bisa diklik
+          { type: 'mrkdwn', text: `*Email:*\n<mailto:${email}|${email}>` },
         ],
       },
       {
@@ -47,7 +41,7 @@ export default async function handler(request, response) {
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `*Pesan:*\n\`\`\`${pesan}\`\`\``, // Menggunakan block code untuk pesan yang lebih panjang
+          text: `*Pesan:*\n\`\`\`${pesan}\`\`\``,
         },
       },
       { type: 'divider' },
