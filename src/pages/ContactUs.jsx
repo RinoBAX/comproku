@@ -10,13 +10,11 @@ const ContactUs = () => {
     pesan: '',
   });
 
-  // State terpusat untuk semua pesan error
   const [errors, setErrors] = useState({});
   
   const [status, setStatus] = useState('');
   const [message, setMessage] = useState('');
 
-  // Fungsi validasi yang dipanggil setiap kali input berubah
   const validateField = (name, value) => {
     let error = '';
     switch (name) {
@@ -62,11 +60,9 @@ const ContactUs = () => {
     validateField(name, value);
   };
 
-  // Versi LENGKAP dengan logika fetch
 const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validasi akhir untuk memastikan tidak ada field yang kosong
     let formIsValid = true;
     const newErrors = {};
     Object.keys(formData).forEach(key => {
@@ -76,7 +72,6 @@ const handleSubmit = async (e) => {
         }
     });
 
-    // Periksa juga error dari validasi real-time
     const hasExistingErrors = Object.values(errors).some(error => error !== '');
     if (hasExistingErrors || !formIsValid) {
         setErrors(prev => ({ ...prev, ...newErrors }));
@@ -89,7 +84,6 @@ const handleSubmit = async (e) => {
     setMessage('Mengirim pesan...');
 
     try {
-        // INI BAGIAN PENTING: Mengirim data ke serverless function Anda
         const response = await fetch('/api/kirim-ke-slack', {
             method: 'POST',
             headers: {
@@ -104,14 +98,12 @@ const handleSubmit = async (e) => {
             throw new Error(result.message || 'Terjadi kesalahan saat mengirim.');
         }
 
-        // Jika berhasil:
         setStatus('success');
         setMessage('Terima kasih! Pesan Anda telah terkirim.');
-        setFormData({ email: '', nama: '', telepon: '', subjek: '', pesan: '' }); // Reset form
-        setErrors({}); // Bersihkan error
+        setFormData({ email: '', nama: '', telepon: '', subjek: '', pesan: '' });
+        setErrors({});
 
     } catch (error) {
-        // Jika gagal:
         setStatus('error');
         setMessage(error.message || 'Gagal mengirim pesan. Silakan coba lagi.');
     }
@@ -119,7 +111,6 @@ const handleSubmit = async (e) => {
 
   return (
     <main className="bg-white font-sans">
-      {/* ... (bagian header & info kontak tidak berubah) ... */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
         <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
@@ -167,7 +158,6 @@ const handleSubmit = async (e) => {
 
             <div className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100">
               <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                {/* --- INPUT EMAIL DENGAN VALIDASI --- */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Alamat Email</label>
                   <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required 
@@ -176,7 +166,6 @@ const handleSubmit = async (e) => {
                   {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
 
-                {/* --- INPUT NAMA DENGAN VALIDASI --- */}
                 <div>
                   <label htmlFor="nama" className="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
                   <input type="text" name="nama" id="nama" value={formData.nama} onChange={handleChange} required 
@@ -185,7 +174,6 @@ const handleSubmit = async (e) => {
                   {errors.nama && <p className="text-red-500 text-sm mt-1">{errors.nama}</p>}
                 </div>
 
-                {/* --- INPUT TELEPON DENGAN VALIDASI --- */}
                 <div>
                   <label htmlFor="telepon" className="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon (WhatsApp)</label>
                   <input type="tel" name="telepon" id="telepon" value={formData.telepon} onChange={handleChange} required minLength="10" maxLength="14"
@@ -194,7 +182,6 @@ const handleSubmit = async (e) => {
                   {errors.telepon && <p className="text-red-500 text-sm mt-1">{errors.telepon}</p>}
                 </div>
 
-                {/* --- INPUT SUBJEK DENGAN KETERANGAN --- */}
                 <div>
                   <label htmlFor="subjek" className="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
                   <p className="text-xs text-gray-500 mb-1">Isi untuk kami memahami kebutuhan anda</p>
@@ -226,7 +213,6 @@ const handleSubmit = async (e) => {
         </div>
       </section>
 
-      {/* ... (bagian Peta & WhatsAppButton tidak berubah) ... */}
       <section className="pb-24">
         <div className="container mx-auto px-6">
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
