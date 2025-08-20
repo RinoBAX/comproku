@@ -5,7 +5,7 @@ export default async function handler(request, response) {
 
   const { nama, email, telepon, subjek, pesan } = request.body;
 
-  const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+  const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
   const slackMessage = {
     text: `🔔 Pesan Baru dari Website: ${subjek}`,
