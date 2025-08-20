@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
 export default async function handler(request, response) {
   if (request.method !== 'POST') {
     return response.status(405).json({ message: 'Method Not Allowed' });
@@ -5,7 +8,7 @@ export default async function handler(request, response) {
 
   const { nama, email, telepon, subjek, pesan } = request.body;
 
-  const SLACK_WEBHOOK_URL = import.meta.env.VITE_SLACK_WEBHOOK_URL;
+  const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
 
   const slackMessage = {
     text: `🔔 Pesan Baru dari Website: ${subjek}`,
