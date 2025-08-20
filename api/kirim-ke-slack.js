@@ -5,12 +5,7 @@ export default async function handler(request, response) {
 
   const { nama, email, telepon, subjek, pesan } = request.body;
 
-  const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
-
-  if (!SLACK_WEBHOOK_URL) {
-    console.error('SLACK_WEBHOOK_URL tidak ditemukan di environment variables');
-    return response.status(500).json({ message: 'Webhook URL tidak dikonfigurasi di server.' });
-  }
+  const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 
   const slackMessage = {
     text: `🔔 Pesan Baru dari Website: ${subjek}`,
